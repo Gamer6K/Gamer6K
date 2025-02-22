@@ -31,17 +31,17 @@
       );
       font-family: 'Courier New', monospace;
       color: var(--text-color);
-      overflow: hidden;
+      overflow-x: hidden;
     }
     
-    /* ===================== MAIN MENU ===================== */
+    /* ===================== MAIN MENU (Adjust padding, font-size, width, etc.) ===================== */
     #main-menu {
       display: block;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 3rem;
+      padding: 2rem; /* [Change padding here to adjust overall menu size] */
       border-radius: 15px;
-      border: 3px solid var(--accent-color);
+      border: 2px solid var(--accent-color); /* Border width decreased from 3px to 2px */
       box-shadow: 
         0 0 40px var(--shadow-glow),
         inset 0 0 25px rgba(0, 234, 255, 0.4);
@@ -53,41 +53,41 @@
       transform: translate(-50%, -50%);
     }
     #main-menu h1 {
-      font-size: 4rem;
+      font-size: 3rem; /* [Adjust main title size here] */
       color: var(--accent-color);
-      margin-bottom: 1.5rem;
-      letter-spacing: 6px;
+      margin-bottom: 1rem; /* Reduced margin */
+      letter-spacing: 4px; /* Adjust letter-spacing if needed */
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
     #main-menu button {
       display: block;
-      margin: 1.2rem auto;
-      padding: 0.8rem 1.5rem;
+      margin: 1rem auto;
+      padding: 0.7rem 1.2rem; /* [Button padding; adjust to change button size] */
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       color: var(--accent-color);
-      font-size: 1.2rem;
+      font-size: 1.1rem; /* [Button font-size; adjust as needed] */
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
-      width: 200px;
+      width: 180px; /* [Adjust button width here] */
       transition: all 0.3s ease;
     }
     #main-menu button:hover {
       background: var(--accent-color);
-      transform: scale(1.1);
+      transform: scale(1.05);
       color: #000000;
       box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
     
-    /* ===================== MODE SELECTION MENU ===================== */
+    /* ===================== MODE SELECTION MENU (Similar adjustments) ===================== */
     #mode-menu {
       display: none;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 3rem;
+      padding: 2rem; /* Adjust menu padding */
       border-radius: 15px;
-      border: 3px solid var(--accent-color);
+      border: 2px solid var(--accent-color);
       box-shadow: 
         0 0 40px var(--shadow-glow),
         inset 0 0 25px rgba(0, 234, 255, 0.4);
@@ -99,41 +99,41 @@
       transform: translate(-50%, -50%);
     }
     #mode-menu h2 {
-      font-size: 2.5rem;
+      font-size: 2rem; /* [Adjust mode menu title size here] */
       color: var(--accent-color);
-      margin-bottom: 1.5rem;
-      letter-spacing: 4px;
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
     #mode-menu button {
       display: block;
-      margin: 1.2rem auto;
-      padding: 0.7rem 1.5rem;
+      margin: 1rem auto;
+      padding: 0.6rem 1.2rem;
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       color: var(--accent-color);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
-      width: 220px;
+      width: 200px; /* [Button width for mode menu] */
       transition: all 0.3s ease;
     }
     #mode-menu button:hover {
       background: var(--accent-color);
-      transform: scale(1.1);
+      transform: scale(1.05);
       color: #000000;
       box-shadow: 0 0 25px var(--shadow-glow);
     }
     
-    /* ===================== SETTINGS MENU ===================== */
+    /* ===================== SETTINGS MENU (Adjust similar to above menus) ===================== */
     #settings-menu {
       display: none;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 3rem;
+      padding: 2rem; /* Adjust settings menu padding */
       border-radius: 15px;
-      border: 3px solid var(--accent-color);
+      border: 2px solid var(--accent-color);
       box-shadow: 
         0 0 40px var(--shadow-glow),
         inset 0 0 25px rgba(0, 234, 255, 0.4);
@@ -146,51 +146,51 @@
       z-index: 1000;
     }
     #settings-menu h2 {
-      font-size: 2.5rem;
+      font-size: 2rem; /* [Adjust settings title size] */
       color: var(--accent-color);
-      margin-bottom: 1.5rem;
-      letter-spacing: 4px;
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
     #settings-menu button {
       display: block;
-      margin: 1.2rem auto;
-      padding: 0.7rem 1.5rem;
+      margin: 1rem auto;
+      padding: 0.6rem 1.2rem;
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       color: var(--accent-color);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
-      width: 150px;
+      width: 130px; /* [Adjust settings button width here] */
       transition: all 0.3s ease;
     }
     #settings-menu button:hover {
       background: var(--accent-color);
-      transform: scale(1.1);
+      transform: scale(1.05);
       color: #000000;
       box-shadow: 0 0 25px var(--shadow-glow);
     }
     
     /* ===================== SCORE BOARD ===================== */
     #score-board {
-      font-size: 3rem;
+      font-size: 2.5rem; /* [Adjust score board font size] */
       font-weight: 700;
       color: var(--accent-color);
-      margin: 25px 0;
+      margin: 20px 0;
       text-align: center;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
     
-    /* ===================== GAME AREA ===================== */
+    /* ===================== GAME AREA & CANVAS ===================== */
     #game-container {
       position: relative;
       padding: 0;
       background: var(--bg-primary);
       border-radius: 12px;
-      border: 3px solid var(--accent-color);
+      border: 2px solid var(--accent-color);
       box-shadow: 
         0 0 50px rgba(0, 0, 0, 0.5),
         inset 0 0 30px rgba(0, 234, 255, 0.2);
@@ -198,34 +198,42 @@
       width: fit-content;
       margin: 0 auto;
     }
+    /* 
+      The canvas size is set in the JavaScript constants.
+      To change the grid size or board size, modify GRID_SIZE in the script.
+    */
     #game-canvas {
-      background: linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 50px 50px,
-                  linear-gradient(0deg, var(--grid-line) 1px, transparent 1px) 0 0 / 50px 50px,
-                  var(--bg-primary);
+      background: 
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px, /* [Grid cell size here: change 40px if needed] */
+        linear-gradient(0deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px,
+        var(--bg-primary);
       border-radius: 12px;
       box-shadow: 0 0 30px var(--shadow-glow), inset 0 0 20px rgba(0, 234, 255, 0.3);
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
     
     /* ===================== PAUSE BUTTON STYLING ===================== */
     #pause-btn {
       position: absolute;
-      top: -65px;
+      top: -55px; /* [Adjust vertical offset of pause button] */
       right: 0px;
       z-index: 999;
       margin: 0;
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem 1.2rem; /* [Change pause button padding here] */
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       color: var(--accent-color);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
       transition: all 0.3s ease;
     }
     #pause-btn:hover {
       background: var(--accent-color);
-      transform: scale(1.1);
+      transform: scale(1.05);
       color: #000000;
       box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
@@ -239,10 +247,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: rgba(10, 10, 26, 0.95);
-      padding: 3rem;
+      padding: 2rem; /* [Adjust popup padding here] */
       border-radius: 15px;
       text-align: center;
-      border: 3px solid var(--accent-color);
+      border: 2px solid var(--accent-color);
       box-shadow: 
         0 0 40px var(--shadow-glow),
         inset 0 0 25px rgba(0, 234, 255, 0.4);
@@ -257,67 +265,67 @@
     #pause-message h2,
     #game-over-message h2 {
       color: var(--accent-color);
-      font-size: 3rem;
-      margin: 0 0 1.5rem 0;
-      letter-spacing: 5px;
+      font-size: 2.5rem; /* [Adjust popup title font size here] */
+      margin: 0 0 1rem 0;
+      letter-spacing: 4px;
       text-shadow: 0 0 20px var(--shadow-glow);
     }
     #start-menu p,
     #pause-message p,
     #game-over-message p {
-      font-size: 1.4rem;
-      margin: 1.2rem 0;
+      font-size: 1.2rem; /* [Adjust popup paragraph font size here] */
+      margin: 1rem 0;
       color: var(--text-color);
     }
     #start-menu p.instructions {
-      font-size: 1.2rem;
-      margin: 0.7rem 0 1.2rem 0;
+      font-size: 1rem; /* [Adjust instructions text size] */
+      margin: 0.5rem 0 1rem 0;
     }
     #start-button,
     .key {
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem; /* [Adjust start button and key size] */
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
-      margin: 1.2rem auto 0 auto;
+      margin: 1rem auto 0 auto;
       color: var(--accent-color);
-      font-size: 1.1rem;
+      font-size: 1rem; /* [Adjust key/button font size here] */
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
       display: inline-block;
       transition: all 0.3s ease;
     }
     .key {
-      margin: 0 0.4rem;
-      padding: 0.3rem 0.8rem;
-      font-size: 1.1rem;
-      box-shadow: 0 0 12px var(--shadow-glow);
+      margin: 0 0.3rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 1rem;
+      box-shadow: 0 0 10px var(--shadow-glow);
     }
     #start-button:hover,
     .key:hover {
       background: var(--accent-color);
-      transform: scale(1.1);
+      transform: scale(1.05);
       color: #000000;
       box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
     #pause-menu-buttons {
-      margin-top: 1.8rem;
+      margin-top: 1.5rem; /* [Adjust spacing for pause menu buttons] */
     }
     #pause-menu-buttons button {
       margin: 0.5rem;
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       color: var(--accent-color);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
       transition: all 0.3s ease;
     }
     #pause-menu-buttons button:hover {
       background: var(--accent-color);
-      transform: scale(1.1);
+      transform: scale(1.05);
       color: #000000;
       box-shadow: 0 0 25px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
@@ -330,6 +338,55 @@
       to {
         opacity: 1;
         transform: translate(-50%, -50%);
+      }
+    }
+    
+    /* ===================== RESPONSIVE STYLES ===================== */
+    @media (max-width: 768px) {
+      /* Adjust menus for smaller screens */
+      #main-menu,
+      #mode-menu,
+      #settings-menu,
+      #start-menu,
+      #pause-message,
+      #game-over-message {
+        width: 90%;
+        padding: 1.5rem;
+        border-width: 2px;
+      }
+      #main-menu h1 {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+      }
+      #mode-menu h2,
+      #settings-menu h2,
+      #start-menu h2,
+      #pause-message h2,
+      #game-over-message h2 {
+        font-size: 1.8rem;
+      }
+      #main-menu button,
+      #mode-menu button,
+      #settings-menu button,
+      #start-button,
+      .key,
+      #pause-btn,
+      #pause-menu-buttons button {
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 250px;
+      }
+      #score-board {
+        font-size: 2rem;
+      }
+      /* Make game container and canvas responsive */
+      #game-container {
+        width: 100%;
+        max-width: 600px;
+      }
+      #game-canvas {
+        width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -390,24 +447,24 @@
   </div>
   
   <script>
-    /***** CONFIGURABLE CONSTANTS *****/
+    /***** CONFIGURABLE CONSTANTS (Adjust these numbers to change game size) *****/
     const TILE_COUNT_X = 15;
     const TILE_COUNT_Y = 13;
-    const GRID_SIZE = 50;
+    const GRID_SIZE = 40; // [Change grid cell size here; reduced from 50 to 40]
     const BOARD_WIDTH = TILE_COUNT_X * GRID_SIZE;
     const BOARD_HEIGHT = TILE_COUNT_Y * GRID_SIZE;
     
-    const APPLE_RADIUS = 18;
-    const SNAKE_BODY_RADIUS = 18;
-    const SNAKE_HEAD_RADIUS = 18;
+    const APPLE_RADIUS = 14; // [Adjust apple size here]
+    const SNAKE_BODY_RADIUS = 14; // [Adjust snake body size here]
+    const SNAKE_HEAD_RADIUS = 14; // [Adjust snake head size here]
     
     const START_SPEED = 120;
     const SPEED_STEP = 2;
     const MIN_SPEED = 50;
     const SCORE_VALUE = 10;
     
-    const PACKET_SIZE = 30;
-    const STREAM_WIDTH = 40;
+    const PACKET_SIZE = 24; // [Adjust packet (food) size here; reduced from 30 to 24]
+    const STREAM_WIDTH = 32; // [Adjust data stream width here; reduced from 40 to 32]
     let glitchTime = 0;
     
     // Global variable to track the origin of the settings popup ("main" or "pause")
