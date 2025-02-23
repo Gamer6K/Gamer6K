@@ -387,17 +387,17 @@
     }
     
     /* ===================== RESPONSIVE STYLES ===================== */
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       #main-menu,
       #mode-menu,
       #instructions-menu,
       #credit-menu,
       #start-menu,
       #pause-message,
-      #game-over-message 
-      .game-container {
-       width: 100vw;
-       height: 100vh;
+      #game-over-message {
+        width: 90%;
+        padding: 1.5rem;
+        border-width: 2px;
       }
       #main-menu h1 {
         font-size: 2.2rem;
@@ -489,7 +489,7 @@
       <p>Press <span class="key">SPACE</span> to resume</p>
       <div id="pause-menu-buttons">
         <button id="resume-btn">Resume</button>
-        <button id="pause-settings-btn">Settings</button> 
+        <button id="pause-settings-btn">Settings</button>
         <button id="pause-main-menu-btn">Main Menu</button>
       </div>
     </div>
