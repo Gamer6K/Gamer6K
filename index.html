@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Data Drifter</title>
   <style>
     /* ===================== CSS VARIABLES & GLOBAL STYLES ===================== */
@@ -35,17 +34,15 @@
       overflow-x: hidden;
     }
     
-    /* ===================== MAIN MENU (Adjust padding, font-size, width, etc.) ===================== */
+    /* ===================== MAIN MENU ===================== */
     #main-menu {
       display: block;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* Change this value to adjust overall menu padding */
+      padding: 2rem; /* Change menu padding here */
       border-radius: 15px;
-      border: 2px solid var(--accent-color); /* Adjust border thickness here */
-      box-shadow: 
-        0 0 40px var(--shadow-glow),
-        inset 0 0 25px rgba(0, 234, 255, 0.4);
+      border: 2px solid var(--accent-color);
+      box-shadow: 0 0 40px var(--shadow-glow), inset 0 0 25px rgba(0, 234, 255, 0.4);
       backdrop-filter: blur(10px);
       animation: fadeIn 0.5s ease-out;
       position: absolute;
@@ -54,10 +51,10 @@
       transform: translate(-50%, -50%);
     }
     #main-menu h1 {
-      font-size: 3rem; /* Change main title size here */
+      font-size: 3rem; /* Change main title size */
       color: var(--accent-color);
-      margin-bottom: 1rem; /* Adjust margin */
-      letter-spacing: 4px; /* Adjust letter-spacing */
+      margin-bottom: 1rem;
+      letter-spacing: 4px;
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
     /* Main Menu Buttons: Play Game, Instructions, Credit */
@@ -69,7 +66,7 @@
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       color: var(--accent-color);
-      font-size: 1.1rem; /* Change button font-size */
+      font-size: 1.1rem; /* Change button font size */
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
       width: 180px; /* Change button width */
@@ -82,7 +79,7 @@
       box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
     
-    /* ===================== MODE SELECTION MENU (No changes from before) ===================== */
+    /* ===================== MODE SELECTION MENU ===================== */
     #mode-menu {
       display: none;
       text-align: center;
@@ -90,9 +87,7 @@
       padding: 2rem;
       border-radius: 15px;
       border: 2px solid var(--accent-color);
-      box-shadow: 
-        0 0 40px var(--shadow-glow),
-        inset 0 0 25px rgba(0, 234, 255, 0.4);
+      box-shadow: 0 0 40px var(--shadow-glow), inset 0 0 25px rgba(0, 234, 255, 0.4);
       backdrop-filter: blur(10px);
       animation: fadeIn 0.5s ease-out;
       position: absolute;
@@ -128,18 +123,15 @@
       box-shadow: 0 0 25px var(--shadow-glow);
     }
     
-    /* ===================== INSTRUCTIONS MENU (formerly settings menu) ===================== */
-    /* This menu shows instructions on how to play the game */
+    /* ===================== INSTRUCTIONS MENU ===================== */
     #instructions-menu {
       display: none;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* Adjust instructions menu padding */
+      padding: 2rem;
       border-radius: 15px;
       border: 2px solid var(--accent-color);
-      box-shadow: 
-        0 0 40px var(--shadow-glow),
-        inset 0 0 25px rgba(0, 234, 255, 0.4);
+      box-shadow: 0 0 40px var(--shadow-glow), inset 0 0 25px rgba(0, 234, 255, 0.4);
       backdrop-filter: blur(10px);
       animation: fadeIn 0.5s ease-out;
       position: absolute;
@@ -149,19 +141,17 @@
       z-index: 1000;
     }
     #instructions-menu h2 {
-      font-size: 2rem; /* Change instructions title size here */
+      font-size: 2rem;
       color: var(--accent-color);
       margin-bottom: 1rem;
       letter-spacing: 3px;
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
-    /* Change instructions text size as needed */
     #instructions-menu p {
       font-size: 1.1rem;
       margin: 1rem 0;
       color: var(--text-color);
     }
-    /* Back button for instructions menu */
     #instructions-menu button {
       display: block;
       margin: 1rem auto;
@@ -184,17 +174,14 @@
     }
     
     /* ===================== CREDIT MENU ===================== */
-    /* This menu shows the credit information */
     #credit-menu {
       display: none;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* Adjust credit menu padding */
+      padding: 2rem;
       border-radius: 15px;
       border: 2px solid var(--accent-color);
-      box-shadow: 
-        0 0 40px var(--shadow-glow),
-        inset 0 0 25px rgba(0, 234, 255, 0.4);
+      box-shadow: 0 0 40px var(--shadow-glow), inset 0 0 25px rgba(0, 234, 255, 0.4);
       backdrop-filter: blur(10px);
       animation: fadeIn 0.5s ease-out;
       position: absolute;
@@ -215,7 +202,6 @@
       margin: 1rem 0;
       color: var(--text-color);
     }
-    /* Back button for credit menu */
     #credit-menu button {
       display: block;
       margin: 1rem auto;
@@ -239,7 +225,7 @@
     
     /* ===================== SCORE BOARD ===================== */
     #score-board {
-      font-size: 2.5rem; /* Adjust score board font size */
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--accent-color);
       margin: 20px 0;
@@ -255,20 +241,15 @@
       background: var(--bg-primary);
       border-radius: 12px;
       border: 2px solid var(--accent-color);
-      box-shadow: 
-        0 0 50px rgba(0, 0, 0, 0.5),
-        inset 0 0 30px rgba(0, 234, 255, 0.2);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(0, 234, 255, 0.2);
       display: none;
       width: fit-content;
       margin: 0 auto;
     }
-    /* 
-      The canvas size is set in the JavaScript constants.
-      To change the grid size or board size, modify GRID_SIZE in the script.
-    */
+    /* Canvas size is defined by JavaScript constants below */
     #game-canvas {
       background: 
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px, /* Adjust grid cell size here */
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px,
         linear-gradient(0deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px,
         var(--bg-primary);
       border-radius: 12px;
@@ -281,11 +262,11 @@
     /* ===================== PAUSE BUTTON STYLING ===================== */
     #pause-btn {
       position: absolute;
-      top: -55px; /* Adjust vertical offset */
+      top: -55px;
       right: 0px;
       z-index: 999;
       margin: 0;
-      padding: 0.6rem 1.2rem; /* Change pause button padding */
+      padding: 0.6rem 1.2rem;
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
@@ -311,25 +292,25 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* Adjust popup padding */
+      padding: 2rem;
       border-radius: 15px;
       text-align: center;
       border: 2px solid var(--accent-color);
-      box-shadow: 
-        0 0 40px var(--shadow-glow),
-        inset 0 0 25px rgba(0, 234, 255, 0.4);
+      box-shadow: 0 0 40px var(--shadow-glow), inset 0 0 25px rgba(0, 234, 255, 0.4);
       backdrop-filter: blur(12px);
       animation: fadeIn 0.5s ease-out;
     }
     #start-menu { display: block; }
     #pause-message,
-    #game-over-message { display: none; }
-    
+    /* ===================== UPDATED GAME OVER MENU ===================== */
+    #game-over-message {
+      display: none;
+    }
     #start-menu h2,
     #pause-message h2,
     #game-over-message h2 {
       color: var(--accent-color);
-      font-size: 2.5rem; /* Adjust popup title font size */
+      font-size: 2.5rem;
       margin: 0 0 1rem 0;
       letter-spacing: 4px;
       text-shadow: 0 0 20px var(--shadow-glow);
@@ -337,23 +318,23 @@
     #start-menu p,
     #pause-message p,
     #game-over-message p {
-      font-size: 1.1rem; /* Adjust popup paragraph font size */
+      font-size: 1.1rem;
       margin: 1rem 0;
       color: var(--text-color);
     }
     #start-menu p.instructions {
-      font-size: 1rem; /* Adjust instructions text size */
+      font-size: 1rem;
       margin: 0.5rem 0 1rem 0;
     }
     #start-button,
     .key {
-      padding: 0.5rem 1rem; /* Adjust start button and key size */
+      padding: 0.5rem 1rem;
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       margin: 1rem auto 0 auto;
       color: var(--accent-color);
-      font-size: 1rem; /* Adjust key/button font size */
+      font-size: 1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
       display: inline-block;
@@ -373,7 +354,7 @@
       box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
     #pause-menu-buttons {
-      margin-top: 1.5rem; /* Adjust spacing for pause menu buttons */
+      margin-top: 1.5rem;
     }
     #pause-menu-buttons button {
       margin: 0.5rem;
@@ -407,7 +388,6 @@
     
     /* ===================== RESPONSIVE STYLES ===================== */
     @media (max-width: 768px) {
-      /* Adjust menus for smaller screens */
       #main-menu,
       #mode-menu,
       #instructions-menu,
@@ -446,7 +426,6 @@
       #score-board {
         font-size: 2rem;
       }
-      /* Make game container and canvas responsive */
       #game-container {
         width: 100%;
         max-width: 600px;
@@ -463,9 +442,7 @@
   <div id="main-menu">
     <h1>DATA DRIFTER</h1>
     <button id="play-game-btn">Play Game</button>
-    <!-- Changed from settings to instructions -->
     <button id="instructions-btn">Instructions</button>
-    <!-- New Credit button -->
     <button id="credit-btn">Credit</button>
   </div>
   
@@ -475,11 +452,10 @@
     <button id="classic-mode-btn">Classic Mode</button>
   </div>
   
-  <!-- ===================== INSTRUCTIONS MENU (formerly settings menu) ===================== -->
+  <!-- ===================== INSTRUCTIONS MENU ===================== -->
   <div id="instructions-menu">
     <h2>Instructions</h2>
-    <!-- You can adjust the instructions text as needed -->
-    
+    <p>Press <span class="key">ENTER</span> or click the button below to start the game.</p>
     <p>Use <span class="key">W, A, S, D</span> or <span class="key">Arrow Keys</span> for movement.</p>
     <p>Press <span class="key">Space</span> to pause the game.</p>
     <button id="back-btn">Back</button>
@@ -498,7 +474,7 @@
     <button id="pause-btn">Pause</button>
     <canvas id="game-canvas"></canvas>
     
-    <!-- ===================== START MENU, PAUSE & GAME OVER ===================== -->
+    <!-- ===================== START MENU ===================== -->
     <div id="start-menu">
       <h2>START GAME</h2>
       <p>Press <span class="key">ENTER</span> or click below to start</p>
@@ -507,6 +483,7 @@
       <button id="start-button">START</button>
     </div>
     
+    <!-- ===================== PAUSE MESSAGE ===================== -->
     <div id="pause-message">
       <h2>PAUSED</h2>
       <p>Press <span class="key">SPACE</span> to resume</p>
@@ -517,10 +494,12 @@
       </div>
     </div>
     
+    <!-- ===================== UPDATED GAME OVER MENU ===================== -->
     <div id="game-over-message">
       <h2>GAME OVER</h2>
       <p>Score: <span id="finalScore">0</span></p>
-      <p>Press <span class="key">ENTER</span> or <span class="key">SPACE</span> to restart</p>
+      <p>Press <span class="key">ENTER</span> or press below to start again</p>
+      <button id="game-over-start-btn">Start</button>
     </div>
   </div>
   
@@ -892,7 +871,6 @@
     }
     
     /***** EVENT LISTENERS *****/
-    // When Play Game is clicked, hide main menu and show mode selection menu.
     document.getElementById('play-game-btn').addEventListener('click', () => {
       document.getElementById('main-menu').style.display = 'none';
       document.getElementById('instructions-menu').style.display = 'none';
@@ -930,12 +908,14 @@
       document.getElementById('main-menu').style.display = 'block';
     });
     
-    // The remaining event listeners remain unchanged.
+    // Start button in Start Menu: Start the game.
     document.getElementById('start-button').addEventListener('click', startGame);
     
+    // Pause button event listeners.
     document.getElementById('pause-btn').addEventListener('click', togglePause);
     document.getElementById('resume-btn').addEventListener('click', togglePause);
     
+    // When opening instructions from the pause menu, keep the game paused.
     document.getElementById('pause-settings-btn').addEventListener('click', () => {
       settingsOrigin = 'pause';
       pauseMessage.style.display = 'none';
@@ -947,6 +927,14 @@
       pauseMessage.style.display = 'none';
       document.getElementById('game-container').style.display = 'none';
       document.getElementById('main-menu').style.display = 'block';
+    });
+    
+    // New event listener for the Game Over "Start" button.
+    document.getElementById('game-over-start-btn').addEventListener('click', () => {
+      initGame();
+      lastUpdateTime = performance.now();
+      accumulatedTime = 0;
+      requestAnimationFrame(gameLoop);
     });
     
     document.addEventListener('keydown', (e) => {
