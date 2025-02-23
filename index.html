@@ -610,6 +610,7 @@
       
       /***** DRAWING FUNCTIONS *****/
       function drawPacket() {
+        // (Drawing code for the packet remains unchanged)
         const centerX = food.x + GRID_SIZE / 2;
         const centerY = food.y + GRID_SIZE / 2;
         const size = PACKET_SIZE;
@@ -688,6 +689,7 @@
       }
       
       function drawDataStream(segments) {
+        // (Drawing code for the data stream remains unchanged)
         if (segments.length < 2) return;
         ctx.save();
         ctx.beginPath();
@@ -752,6 +754,7 @@
       }
       
       function drawStreamHead(segment) {
+        // (Drawing code for the stream head remains unchanged)
         const angle = Math.atan2(dy, dx);
         const centerX = segment.x;
         const centerY = segment.y;
@@ -978,6 +981,44 @@
           default:
             return;
         }
+        if (proposed.x === -dx && proposed.y === -dy) return;
+        if ((proposed.x !== 0 && dx !== 0) || (proposed.y !== 0 && dy !== 0)) return;
+        nextDir.x = proposed.x;
+        nextDir.y = proposed.y;
+      });
+      
+      /***** TOUCH EVENT LISTENERS FOR MOBILE *****/
+      // Variables to store initial touch position
+      let touchStartX = null, touchStartY = null;
+      
+      // When a touch starts, record the starting coordinates.
+      $canvas.on('touchstart', function(e) {
+        e.preventDefault();
+        const touch = e.originalEvent.touches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+      });
+      
+      // When the touch ends, determine the swipe direction.
+      $canvas.on('touchend', function(e) {
+        e.preventDefault();
+        const touch = e.originalEvent.changedTouches[0];
+        const touchEndX = touch.clientX;
+        const touchEndY = touch.clientY;
+        const dxSwipe = touchEndX - touchStartX;
+        const dySwipe = touchEndY - touchStartY;
+        let proposed = { x: 0, y: 0 };
+      
+        // Determine if the swipe was more horizontal or vertical.
+        if (Math.abs(dxSwipe) > Math.abs(dySwipe)) {
+          // Horizontal swipe
+          proposed = dxSwipe > 0 ? { x: GRID_SIZE, y: 0 } : { x: -GRID_SIZE, y: 0 };
+        } else {
+          // Vertical swipe
+          proposed = dySwipe > 0 ? { x: 0, y: GRID_SIZE } : { x: 0, y: -GRID_SIZE };
+        }
+      
+        // Validate against the current direction (prevent moving directly opposite or same-axis changes).
         if (proposed.x === -dx && proposed.y === -dy) return;
         if ((proposed.x !== 0 && dx !== 0) || (proposed.y !== 0 && dy !== 0)) return;
         nextDir.x = proposed.x;
