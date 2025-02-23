@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Data Drifter</title>
   <style>
+    /* Disable scrolling on the entire page */
+    html, body {
+      overflow: hidden;
+    }
+    
     /* ===================== CSS VARIABLES & GLOBAL STYLES ===================== */
     :root {
       --bg-primary: #0a0a1a;
@@ -31,7 +36,6 @@
       );
       font-family: 'Courier New', monospace;
       color: var(--text-color);
-      overflow-x: hidden;
     }
     
     /* ===================== MAIN MENU ===================== */
@@ -356,6 +360,7 @@
     #pause-menu-buttons {
       margin-top: 1.5rem;
     }
+    /* In the pause menu, we have removed the settings button */
     #pause-menu-buttons button {
       margin: 0.5rem;
       padding: 0.6rem 1.2rem;
@@ -368,6 +373,7 @@
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
       transition: all 0.3s ease;
     }
+    /* The pause menu now only includes Resume and Main Menu buttons */
     #pause-menu-buttons button:hover {
       background: var(--accent-color);
       transform: scale(1.05);
@@ -489,7 +495,6 @@
       <p>Press <span class="key">SPACE</span> to resume</p>
       <div id="pause-menu-buttons">
         <button id="resume-btn">Resume</button>
-        <button id="pause-settings-btn">Settings</button>
         <button id="pause-main-menu-btn">Main Menu</button>
       </div>
     </div>
@@ -914,13 +919,6 @@
     // Pause button event listeners.
     document.getElementById('pause-btn').addEventListener('click', togglePause);
     document.getElementById('resume-btn').addEventListener('click', togglePause);
-    
-    // When opening instructions from the pause menu, keep the game paused.
-    document.getElementById('pause-settings-btn').addEventListener('click', () => {
-      settingsOrigin = 'pause';
-      pauseMessage.style.display = 'none';
-      document.getElementById('instructions-menu').style.display = 'block';
-    });
     
     document.getElementById('pause-main-menu-btn').addEventListener('click', () => {
       isPaused = false;
