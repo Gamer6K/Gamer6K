@@ -592,11 +592,13 @@
       }
       
       /***** FOOD SPAWNING LOGIC *****/
+      // For cells in the outermost two rings, only a 10% chance is allowed.
       function spawnFood() {
         while (true) {
           const xCell = Math.floor(Math.random() * TILE_COUNT_X);
           const yCell = Math.floor(Math.random() * TILE_COUNT_Y);
-          if ((xCell === 0 || xCell === TILE_COUNT_X - 1 || yCell === 0 || yCell === TILE_COUNT_Y - 1) && Math.random() > 0.2) {
+          // If cell is in the outer ring or the one just inside (indices 0,1 or TILE_COUNT-2, TILE_COUNT-1), then allow apple spawn with only a 10% chance.
+          if ((xCell < 2 || xCell >= TILE_COUNT_X - 2 || yCell < 2 || yCell >= TILE_COUNT_Y - 2) && Math.random() > 0.1) {
             continue;
           }
           const x = xCell * GRID_SIZE;
@@ -610,7 +612,6 @@
       
       /***** DRAWING FUNCTIONS *****/
       function drawPacket() {
-        // (Drawing code for the packet remains unchanged)
         const centerX = food.x + GRID_SIZE / 2;
         const centerY = food.y + GRID_SIZE / 2;
         const size = PACKET_SIZE;
@@ -689,7 +690,6 @@
       }
       
       function drawDataStream(segments) {
-        // (Drawing code for the data stream remains unchanged)
         if (segments.length < 2) return;
         ctx.save();
         ctx.beginPath();
@@ -754,7 +754,6 @@
       }
       
       function drawStreamHead(segment) {
-        // (Drawing code for the stream head remains unchanged)
         const angle = Math.atan2(dy, dx);
         const centerX = segment.x;
         const centerY = segment.y;
@@ -808,7 +807,8 @@
       
       function draw(interp = 1) {
         ctx.clearRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
-        const smoothInterp = interp * interp * (3 - 2 * interp);
+        // Use a sinusoidal easing for smoother interpolation
+        const smoothInterp = (Math.sin((interp - 0.5) * Math.PI) + 1) / 2;
         const interpSnake = snake.map((seg, i) => {
           const prev = prevSnake[i] || seg;
           return {
@@ -988,10 +988,8 @@
       });
       
       /***** TOUCH EVENT LISTENERS FOR MOBILE *****/
-      // Variables to store initial touch position
       let touchStartX = null, touchStartY = null;
       
-      // When a touch starts, record the starting coordinates.
       $canvas.on('touchstart', function(e) {
         e.preventDefault();
         const touch = e.originalEvent.touches[0];
@@ -999,7 +997,6 @@
         touchStartY = touch.clientY;
       });
       
-      // When the touch ends, determine the swipe direction.
       $canvas.on('touchend', function(e) {
         e.preventDefault();
         const touch = e.originalEvent.changedTouches[0];
@@ -1009,16 +1006,12 @@
         const dySwipe = touchEndY - touchStartY;
         let proposed = { x: 0, y: 0 };
       
-        // Determine if the swipe was more horizontal or vertical.
         if (Math.abs(dxSwipe) > Math.abs(dySwipe)) {
-          // Horizontal swipe
           proposed = dxSwipe > 0 ? { x: GRID_SIZE, y: 0 } : { x: -GRID_SIZE, y: 0 };
         } else {
-          // Vertical swipe
           proposed = dySwipe > 0 ? { x: 0, y: GRID_SIZE } : { x: 0, y: -GRID_SIZE };
         }
       
-        // Validate against the current direction (prevent moving directly opposite or same-axis changes).
         if (proposed.x === -dx && proposed.y === -dy) return;
         if ((proposed.x !== 0 && dx !== 0) || (proposed.y !== 0 && dy !== 0)) return;
         nextDir.x = proposed.x;
