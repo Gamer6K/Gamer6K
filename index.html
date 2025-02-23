@@ -39,9 +39,9 @@
       display: block;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* [Change padding here to adjust overall menu size] */
+      padding: 2rem; /* Change this value to adjust overall menu padding */
       border-radius: 15px;
-      border: 2px solid var(--accent-color); /* Border width decreased from 3px to 2px */
+      border: 2px solid var(--accent-color); /* Adjust border thickness here */
       box-shadow: 
         0 0 40px var(--shadow-glow),
         inset 0 0 25px rgba(0, 234, 255, 0.4);
@@ -53,24 +53,25 @@
       transform: translate(-50%, -50%);
     }
     #main-menu h1 {
-      font-size: 3rem; /* [Adjust main title size here] */
+      font-size: 3rem; /* Change main title size here */
       color: var(--accent-color);
-      margin-bottom: 1rem; /* Reduced margin */
-      letter-spacing: 4px; /* Adjust letter-spacing if needed */
+      margin-bottom: 1rem; /* Adjust margin */
+      letter-spacing: 4px; /* Adjust letter-spacing */
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
+    /* Main Menu Buttons: Play Game, Instructions, Credit */
     #main-menu button {
       display: block;
       margin: 1rem auto;
-      padding: 0.7rem 1.2rem; /* [Button padding; adjust to change button size] */
+      padding: 0.7rem 1.2rem; /* Change button padding */
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       color: var(--accent-color);
-      font-size: 1.1rem; /* [Button font-size; adjust as needed] */
+      font-size: 1.1rem; /* Change button font-size */
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
-      width: 180px; /* [Adjust button width here] */
+      width: 180px; /* Change button width */
       transition: all 0.3s ease;
     }
     #main-menu button:hover {
@@ -80,12 +81,12 @@
       box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
     
-    /* ===================== MODE SELECTION MENU (Similar adjustments) ===================== */
+    /* ===================== MODE SELECTION MENU (No changes from before) ===================== */
     #mode-menu {
       display: none;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* Adjust menu padding */
+      padding: 2rem;
       border-radius: 15px;
       border: 2px solid var(--accent-color);
       box-shadow: 
@@ -99,7 +100,7 @@
       transform: translate(-50%, -50%);
     }
     #mode-menu h2 {
-      font-size: 2rem; /* [Adjust mode menu title size here] */
+      font-size: 2rem;
       color: var(--accent-color);
       margin-bottom: 1rem;
       letter-spacing: 3px;
@@ -116,7 +117,7 @@
       font-size: 1.1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
-      width: 200px; /* [Button width for mode menu] */
+      width: 200px;
       transition: all 0.3s ease;
     }
     #mode-menu button:hover {
@@ -126,12 +127,13 @@
       box-shadow: 0 0 25px var(--shadow-glow);
     }
     
-    /* ===================== SETTINGS MENU (Adjust similar to above menus) ===================== */
-    #settings-menu {
+    /* ===================== INSTRUCTIONS MENU (formerly settings menu) ===================== */
+    /* This menu shows instructions on how to play the game */
+    #instructions-menu {
       display: none;
       text-align: center;
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* Adjust settings menu padding */
+      padding: 2rem; /* Adjust instructions menu padding */
       border-radius: 15px;
       border: 2px solid var(--accent-color);
       box-shadow: 
@@ -145,14 +147,21 @@
       transform: translate(-50%, -50%);
       z-index: 1000;
     }
-    #settings-menu h2 {
-      font-size: 2rem; /* [Adjust settings title size] */
+    #instructions-menu h2 {
+      font-size: 2rem; /* Change instructions title size here */
       color: var(--accent-color);
       margin-bottom: 1rem;
       letter-spacing: 3px;
       text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
     }
-    #settings-menu button {
+    /* Change instructions text size as needed */
+    #instructions-menu p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+      color: var(--text-color);
+    }
+    /* Back button for instructions menu */
+    #instructions-menu button {
       display: block;
       margin: 1rem auto;
       padding: 0.6rem 1.2rem;
@@ -163,10 +172,64 @@
       font-size: 1.1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
-      width: 130px; /* [Adjust settings button width here] */
+      width: 130px;
       transition: all 0.3s ease;
     }
-    #settings-menu button:hover {
+    #instructions-menu button:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+      color: #000000;
+      box-shadow: 0 0 25px var(--shadow-glow);
+    }
+    
+    /* ===================== CREDIT MENU ===================== */
+    /* This menu shows the credit information */
+    #credit-menu {
+      display: none;
+      text-align: center;
+      background: rgba(10, 10, 26, 0.95);
+      padding: 2rem; /* Adjust credit menu padding */
+      border-radius: 15px;
+      border: 2px solid var(--accent-color);
+      box-shadow: 
+        0 0 40px var(--shadow-glow),
+        inset 0 0 25px rgba(0, 234, 255, 0.4);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 0.5s ease-out;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+    }
+    #credit-menu h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
+    }
+    #credit-menu p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+      color: var(--text-color);
+    }
+    /* Back button for credit menu */
+    #credit-menu button {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.6rem 1.2rem;
+      background: rgba(0, 234, 255, 0.15);
+      border: 2px solid var(--accent-color);
+      border-radius: 8px;
+      color: var(--accent-color);
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
+      width: 130px;
+      transition: all 0.3s ease;
+    }
+    #credit-menu button:hover {
       background: var(--accent-color);
       transform: scale(1.05);
       color: #000000;
@@ -175,7 +238,7 @@
     
     /* ===================== SCORE BOARD ===================== */
     #score-board {
-      font-size: 2.5rem; /* [Adjust score board font size] */
+      font-size: 2.5rem; /* Adjust score board font size */
       font-weight: 700;
       color: var(--accent-color);
       margin: 20px 0;
@@ -204,7 +267,7 @@
     */
     #game-canvas {
       background: 
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px, /* [Grid cell size here: change 40px if needed] */
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px, /* Adjust grid cell size here */
         linear-gradient(0deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px,
         var(--bg-primary);
       border-radius: 12px;
@@ -217,11 +280,11 @@
     /* ===================== PAUSE BUTTON STYLING ===================== */
     #pause-btn {
       position: absolute;
-      top: -55px; /* [Adjust vertical offset of pause button] */
+      top: -55px; /* Adjust vertical offset */
       right: 0px;
       z-index: 999;
       margin: 0;
-      padding: 0.6rem 1.2rem; /* [Change pause button padding here] */
+      padding: 0.6rem 1.2rem; /* Change pause button padding */
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
@@ -247,7 +310,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: rgba(10, 10, 26, 0.95);
-      padding: 2rem; /* [Adjust popup padding here] */
+      padding: 2rem; /* Adjust popup padding */
       border-radius: 15px;
       text-align: center;
       border: 2px solid var(--accent-color);
@@ -265,7 +328,7 @@
     #pause-message h2,
     #game-over-message h2 {
       color: var(--accent-color);
-      font-size: 2.5rem; /* [Adjust popup title font size here] */
+      font-size: 2.5rem; /* Adjust popup title font size */
       margin: 0 0 1rem 0;
       letter-spacing: 4px;
       text-shadow: 0 0 20px var(--shadow-glow);
@@ -273,23 +336,23 @@
     #start-menu p,
     #pause-message p,
     #game-over-message p {
-      font-size: 1.2rem; /* [Adjust popup paragraph font size here] */
+      font-size: 1.1rem; /* Adjust popup paragraph font size */
       margin: 1rem 0;
       color: var(--text-color);
     }
     #start-menu p.instructions {
-      font-size: 1rem; /* [Adjust instructions text size] */
+      font-size: 1rem; /* Adjust instructions text size */
       margin: 0.5rem 0 1rem 0;
     }
     #start-button,
     .key {
-      padding: 0.5rem 1rem; /* [Adjust start button and key size] */
+      padding: 0.5rem 1rem; /* Adjust start button and key size */
       background: rgba(0, 234, 255, 0.15);
       border: 2px solid var(--accent-color);
       border-radius: 8px;
       margin: 1rem auto 0 auto;
       color: var(--accent-color);
-      font-size: 1rem; /* [Adjust key/button font size here] */
+      font-size: 1rem; /* Adjust key/button font size */
       cursor: pointer;
       box-shadow: 0 0 15px var(--shadow-glow), inset 0 0 10px rgba(0, 234, 255, 0.3);
       display: inline-block;
@@ -309,7 +372,7 @@
       box-shadow: 0 0 20px var(--shadow-glow), inset 0 0 15px rgba(0, 234, 255, 0.5);
     }
     #pause-menu-buttons {
-      margin-top: 1.5rem; /* [Adjust spacing for pause menu buttons] */
+      margin-top: 1.5rem; /* Adjust spacing for pause menu buttons */
     }
     #pause-menu-buttons button {
       margin: 0.5rem;
@@ -346,7 +409,8 @@
       /* Adjust menus for smaller screens */
       #main-menu,
       #mode-menu,
-      #settings-menu,
+      #instructions-menu,
+      #credit-menu,
       #start-menu,
       #pause-message,
       #game-over-message {
@@ -359,7 +423,8 @@
         letter-spacing: 3px;
       }
       #mode-menu h2,
-      #settings-menu h2,
+      #instructions-menu h2,
+      #credit-menu h2,
       #start-menu h2,
       #pause-message h2,
       #game-over-message h2 {
@@ -367,7 +432,8 @@
       }
       #main-menu button,
       #mode-menu button,
-      #settings-menu button,
+      #instructions-menu button,
+      #credit-menu button,
       #start-button,
       .key,
       #pause-btn,
@@ -396,7 +462,10 @@
   <div id="main-menu">
     <h1>DATA DRIFTER</h1>
     <button id="play-game-btn">Play Game</button>
-    <button id="settings-btn">Settings</button>
+    <!-- Changed from settings to instructions -->
+    <button id="instructions-btn">Instructions</button>
+    <!-- New Credit button -->
+    <button id="credit-btn">Credit</button>
   </div>
   
   <!-- ===================== MODE SELECTION MENU ===================== -->
@@ -405,11 +474,21 @@
     <button id="classic-mode-btn">Classic Mode</button>
   </div>
   
-  <!-- ===================== SETTINGS MENU ===================== -->
-  <div id="settings-menu">
-    <h2>Settings</h2>
-    <p>Volume, difficulty, etc. (Not implemented yet!)</p>
+  <!-- ===================== INSTRUCTIONS MENU (formerly settings menu) ===================== -->
+  <div id="instructions-menu">
+    <h2>Instructions</h2>
+    <!-- You can adjust the instructions text as needed -->
+    
+    <p>Use <span class="key">W, A, S, D</span> or <span class="key">Arrow Keys</span> for movement.</p>
+    <p>Press <span class="key">Space</span> to pause the game.</p>
     <button id="back-btn">Back</button>
+  </div>
+  
+  <!-- ===================== CREDIT MENU ===================== -->
+  <div id="credit-menu">
+    <h2>Credit</h2>
+    <p>Created by Shujaat Ali Asif</p>
+    <button id="credit-back-btn">Back</button>
   </div>
   
   <!-- ===================== GAME AREA ===================== -->
@@ -418,16 +497,15 @@
     <button id="pause-btn">Pause</button>
     <canvas id="game-canvas"></canvas>
     
-    <!-- ===================== START MENU ===================== -->
+    <!-- ===================== START MENU, PAUSE & GAME OVER ===================== -->
     <div id="start-menu">
       <h2>START GAME</h2>
       <p>Press <span class="key">ENTER</span> or click below to start</p>
-      <p class="instructions">Use W,A,S,D or Arrow Keys for Movements</p>
-      <p>Press <span class="key">Space</span> to Pause</p>
+      <p class="instructions">Use <span class="key">W, A, S, D</span> or <span class="key">Arrow Keys</span> for movements</p>
+      <p>Press <span class="key">Space</span> to pause</p>
       <button id="start-button">START</button>
     </div>
     
-    <!-- ===================== PAUSE MESSAGE ===================== -->
     <div id="pause-message">
       <h2>PAUSED</h2>
       <p>Press <span class="key">SPACE</span> to resume</p>
@@ -438,7 +516,6 @@
       </div>
     </div>
     
-    <!-- ===================== GAME OVER MESSAGE ===================== -->
     <div id="game-over-message">
       <h2>GAME OVER</h2>
       <p>Score: <span id="finalScore">0</span></p>
@@ -450,21 +527,21 @@
     /***** CONFIGURABLE CONSTANTS (Adjust these numbers to change game size) *****/
     const TILE_COUNT_X = 15;
     const TILE_COUNT_Y = 13;
-    const GRID_SIZE = 40; // [Change grid cell size here; reduced from 50 to 40]
+    const GRID_SIZE = 40; // Change grid cell size here
     const BOARD_WIDTH = TILE_COUNT_X * GRID_SIZE;
     const BOARD_HEIGHT = TILE_COUNT_Y * GRID_SIZE;
     
-    const APPLE_RADIUS = 14; // [Adjust apple size here]
-    const SNAKE_BODY_RADIUS = 14; // [Adjust snake body size here]
-    const SNAKE_HEAD_RADIUS = 14; // [Adjust snake head size here]
+    const APPLE_RADIUS = 14; // Adjust apple size here
+    const SNAKE_BODY_RADIUS = 14; // Adjust snake body size here
+    const SNAKE_HEAD_RADIUS = 14; // Adjust snake head size here
     
     const START_SPEED = 120;
     const SPEED_STEP = 2;
     const MIN_SPEED = 50;
     const SCORE_VALUE = 10;
     
-    const PACKET_SIZE = 24; // [Adjust packet (food) size here; reduced from 30 to 24]
-    const STREAM_WIDTH = 32; // [Adjust data stream width here; reduced from 40 to 32]
+    const PACKET_SIZE = 24; // Adjust packet size here
+    const STREAM_WIDTH = 32; // Adjust data stream width here
     let glitchTime = 0;
     
     // Global variable to track the origin of the settings popup ("main" or "pause")
@@ -814,9 +891,11 @@
     }
     
     /***** EVENT LISTENERS *****/
+    // When Play Game is clicked, hide main menu and show mode selection menu.
     document.getElementById('play-game-btn').addEventListener('click', () => {
       document.getElementById('main-menu').style.display = 'none';
-      document.getElementById('settings-menu').style.display = 'none';
+      document.getElementById('instructions-menu').style.display = 'none';
+      document.getElementById('credit-menu').style.display = 'none';
       document.getElementById('mode-menu').style.display = 'block';
     });
     
@@ -826,35 +905,40 @@
       document.getElementById('game-container').style.display = 'block';
     });
     
-    // From Main Menu
-    document.getElementById('settings-btn').addEventListener('click', () => {
-      settingsOrigin = 'main';
+    // Instructions button in Main Menu: Show the instructions menu.
+    document.getElementById('instructions-btn').addEventListener('click', () => {
       document.getElementById('main-menu').style.display = 'none';
-      document.getElementById('settings-menu').style.display = 'block';
+      document.getElementById('instructions-menu').style.display = 'block';
     });
     
-    // Back button in Settings Menu.
+    // Credit button in Main Menu: Show the credit menu.
+    document.getElementById('credit-btn').addEventListener('click', () => {
+      document.getElementById('main-menu').style.display = 'none';
+      document.getElementById('credit-menu').style.display = 'block';
+    });
+    
+    // Back button in Instructions Menu: Return to Main Menu.
     document.getElementById('back-btn').addEventListener('click', () => {
-      document.getElementById('settings-menu').style.display = 'none';
-      if (settingsOrigin === 'pause'){
-        pauseMessage.style.display = 'block';
-      } else {
-        document.getElementById('main-menu').style.display = 'block';
-      }
+      document.getElementById('instructions-menu').style.display = 'none';
+      document.getElementById('main-menu').style.display = 'block';
     });
     
+    // Back button in Credit Menu: Return to Main Menu.
+    document.getElementById('credit-back-btn').addEventListener('click', () => {
+      document.getElementById('credit-menu').style.display = 'none';
+      document.getElementById('main-menu').style.display = 'block';
+    });
+    
+    // The remaining event listeners remain unchanged.
     document.getElementById('start-button').addEventListener('click', startGame);
     
-    // Pause Menu event listeners.
     document.getElementById('pause-btn').addEventListener('click', togglePause);
     document.getElementById('resume-btn').addEventListener('click', togglePause);
     
-    // When opening settings from the pause menu, keep the game paused.
     document.getElementById('pause-settings-btn').addEventListener('click', () => {
       settingsOrigin = 'pause';
-      // DO NOT change isPaused, so the game remains paused.
       pauseMessage.style.display = 'none';
-      document.getElementById('settings-menu').style.display = 'block';
+      document.getElementById('instructions-menu').style.display = 'block';
     });
     
     document.getElementById('pause-main-menu-btn').addEventListener('click', () => {
